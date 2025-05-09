@@ -1,0 +1,135 @@
+body {
+  background: #1e1e1e;
+  margin-bottom: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.sudoku-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letra {
+  color: greenyellow;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sudoku {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: fit-content;
+  margin: -75px;
+  padding: 5px;
+  border: 3px solid #000;
+}
+
+/* Celdas comunes */
+.cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.cellAzul {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #2f6eff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cellRojo {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #ff3737;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Líneas gruesas para el tablero azul */
+.tablero-azul .cell:nth-child(3n+1),
+.tablero-azul .cell:nth-child(3n+4),
+.tablero-azul .cell:nth-child(3n+7) {
+  border-left: 4px solid #007BFF;  /* Borde izquierdo de cada bloque 3x3 (azul) */
+}
+
+.tablero-azul .cell:nth-child(-n+27):nth-child(n+19),
+.tablero-azul .cell:nth-child(-n+54):nth-child(n+46),
+.tablero-azul .cell:nth-child(-n+81):nth-child(n+73) {
+  border-top: 4px solid #007BFF;  /* Borde superior de cada bloque 3x3 (azul) */
+}
+
+.tablero-azul .cell:nth-child(3n),
+.tablero-azul .cell:nth-child(n+28):nth-child(-n+36),
+.tablero-azul .cell:nth-child(n+55):nth-child(-n+63),
+.tablero-azul .cell:nth-child(n+82):nth-child(-n+90) {
+  border-right: 4px solid #007BFF;  /* Borde derecho de cada bloque 3x3 (azul) */
+}
+
+.tablero-azul .cell:nth-child(n+19):nth-child(-n+27),
+.tablero-azul .cell:nth-child(n+46):nth-child(-n+54),
+.tablero-azul .cell:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 4px solid #007BFF;  /* Borde inferior de cada bloque 3x3 (azul) */
+}
+
+/* Líneas gruesas para el tablero rojo */
+.tablero-rojo .cell:nth-child(3n+1),
+.tablero-rojo .cell:nth-child(3n+4),
+.tablero-rojo .cell:nth-child(3n+7) {
+  border-left: 4px solid #FF4136;  /* Borde izquierdo de cada bloque 3x3 (rojo) */
+}
+
+.tablero-rojo .cell:nth-child(-n+27):nth-child(n+19),
+.tablero-rojo .cell:nth-child(-n+54):nth-child(n+46),
+.tablero-rojo .cell:nth-child(-n+81):nth-child(n+73) {
+  border-top: 4px solid #FF4136;  /* Borde superior de cada bloque 3x3 (rojo) */
+}
+
+.tablero-rojo .cell:nth-child(3n),
+.tablero-rojo .cell:nth-child(n+28):nth-child(-n+36),
+.tablero-rojo .cell:nth-child(n+55):nth-child(-n+63),
+.tablero-rojo .cell:nth-child(n+82):nth-child(-n+90) {
+  border-right: 4px solid #FF4136;  /* Borde derecho de cada bloque 3x3 (rojo) */
+}
+
+.tablero-rojo .cell:nth-child(n+19):nth-child(-n+27),
+.tablero-rojo .cell:nth-child(n+46):nth-child(-n+54),
+.tablero-rojo .cell:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 4px solid #FF4136;  /* Borde inferior de cada bloque 3x3 (rojo) */
+}
+
+/* Primer tablero - Azul */
+.tablero-azul {
+  border-color: #007BFF;
+}
+.tablero-azul .cell {
+  color: #007BFF;
+}
+
+/* Segundo tablero - Rojo */
+.tablero-rojo {
+  border-color: #FF4136;
+}
+.tablero-rojo .cell {
+  color: #FF4136;
+}
